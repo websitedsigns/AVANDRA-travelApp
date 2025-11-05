@@ -80,16 +80,14 @@ body {
   gap: 0.75rem;
 }
 
-.brand-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 0%, #e0f2fe 0, #0ea5e9 50%, #0369a1 100%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #0b1120;
+/* Logo image in header */
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.03);
   box-shadow:
     0 0 0 2px rgba(15, 23, 42, 0.85),
     0 10px 30px rgba(15, 23, 42, 0.85);
@@ -234,6 +232,196 @@ body {
   color: var(--text-muted);
 }
 
+/* Panel header */
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panel-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.panel-header p {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Pills and badges */
+
+.pill-count {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Form */
+
+.trip-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.2rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.subtle-input {
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 0.55rem 0.65rem;
+  font-size: 0.88rem;
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text-main);
+  outline: none;
+  transition:
+    border-color 0.12s ease,
+    box-shadow 0.12s ease,
+    background 0.12s ease;
+}
+
+.subtle-input::placeholder {
+  color: rgba(148, 163, 184, 0.7);
+}
+
+.subtle-input:focus {
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.45);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.subtle-textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.form-actions {
+  margin-top: 1.1rem;
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+/* Secondary button */
+
+.ghost-btn {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  padding: 0.5rem 1rem;
+  font-size: 0.88rem;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.12s ease,
+    color 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.ghost-btn:hover {
+  background: rgba(15, 23, 42, 0.75);
+  color: var(--text-main);
+  border-color: rgba(148, 163, 184, 0.9);
+}
+
+/* Trip list */
+
+.trip-list-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.trip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.trip-card {
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.08) 0, transparent 55%),
+    rgba(15, 23, 42, 0.95);
+  padding: 0.7rem 0.85rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.3fr);
+  gap: 0.3rem 1rem;
+}
+
+.trip-card-main h4 {
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+.trip-destination {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.trip-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: flex-start;
+}
+
+.trip-dates {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.trip-notes-preview {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgba(209, 213, 219, 0.9);
+}
+
+/* Extra text in hero when trips exist */
+
+.hero-hint {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
 /* Responsiveness */
 
 @media (max-width: 900px) {
@@ -252,6 +440,16 @@ body {
   }
 }
 
+@media (max-width: 700px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trip-card {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 600px) {
   .app-header {
     flex-direction: column;
@@ -262,15 +460,3 @@ body {
     align-self: flex-start;
   }
 }
-
-.brand-logo {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  object-fit: contain;
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow:
-    0 0 0 2px rgba(15, 23, 42, 0.85),
-    0 10px 30px rgba(15, 23, 42, 0.85);
-}
-
