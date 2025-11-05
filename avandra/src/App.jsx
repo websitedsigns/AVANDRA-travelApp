@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // For now, we just keep a dummy bit of state we will expand later
+  const [hasTrips] = useState(false);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="app-root">
+      <header className="app-header">
+        <div className="brand">
+  <img
+    src="AvandralogoA.png"
+    alt="Avandra Logo"
+    className="brand-logo"
+  />
+  <div className="brand-text">
+    <h1>Avandra</h1>
+    <p className="brand-tagline">Your journeys, organised beautifully.</p>
+  </div>
+</div>
+
+
+        <button className="primary-btn" type="button">
+          New trip
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      </header>
+
+      <main className="app-main">
+        <section className="hero-panel">
+          <h2>Plan every detail of your next adventure</h2>
+          <p>
+            Keep flights, hotels, activities and notes in one clean itinerary that works online
+            and on paper.
+          </p>
+        </section>
+
+        <section className="content-panel">
+          {!hasTrips ? (
+            <div className="empty-state">
+              <h3>Start your first trip</h3>
+              <p>
+                You do not have any trips yet. Soon this space will show your upcoming adventures,
+                with every event neatly in order.
+              </p>
+              <button className="primary-btn primary-btn-lg" type="button">
+                Create your first trip
+              </button>
+            </div>
+          ) : (
+            <div>
+              {/* Later: list of trips and selected trip detail */}
+            </div>
+          )}
+        </section>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
